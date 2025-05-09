@@ -1,0 +1,36 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #111;
+  color: white;
+}
+.grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+.luchador {
+  width: 150px;
+  cursor: pointer;
+}
+.luchador img {
+  width: 100%;
+  border-radius: 10px;
+  border: 2px solid #444;
+}
+.detalles {
+  display: none;
+  position: fixed;
+  top: 20%;
+  left: 25%;
+  width: 50%;
+  background: #222;
+  padding: 20px;
+  border: 2px solid white;
+}
+button {
+  padding: 10px 20px;
+  margin-top: 10px;
+}

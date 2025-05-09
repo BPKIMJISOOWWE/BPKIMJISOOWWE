@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Luchadores</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Roster de Luchadores</h1>
+  <div class="grid">
+    <div class="luchador" onclick="verDetalles('gio')">
+      <img src="images/gio.jpg" alt="Gio">
+      <p>Gio</p>
+    </div>
+    <div class="luchador" onclick="verDetalles('rebecca')">
+      <img src="images/rebecca.jpg" alt="Rebecca">
+      <p>Rebecca Fox</p>
+    </div>
+  </div>
+
+  <div id="detalles" class="detalles">
+    <h2 id="nombre"></h2>
+    <p id="logros"></p>
+    <button onclick="cerrarDetalles()">Cerrar</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
