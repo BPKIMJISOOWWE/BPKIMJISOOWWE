@@ -2,28 +2,35 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Luchadores</title>
+  <title>WWE Champions</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Roster de Luchadores</h1>
-  <div class="grid">
-    <div class="luchador" onclick="verDetalles('gio')">
-      <img src="images/gio.jpg" alt="Gio">
-      <p>Gio</p>
+  <section class="champions">
+    <h2><span class="wwe">WWE</span>: Champions</h2>
+    <div class="champion-grid">
+      <div class="champion-card">
+        <img src="images/johncena.png" alt="John Cena">
+        <div class="champion-info">
+          <h3>John Cena</h3>
+          <p>Undisputed WWE Champion</p>
+        </div>
+      </div>
+      <div class="champion-card">
+        <img src="images/jeyuso.png" alt="Jey Uso">
+        <div class="champion-info">
+          <h3>Jey Uso</h3>
+          <p>World Heavyweight Champion</p>
+        </div>
+      </div>
+      <div class="champion-card">
+        <img src="images/iyosky.png" alt="IYO SKY">
+        <div class="champion-info">
+          <h3>IYO SKY</h3>
+          <p>Women's World Champion</p>
+        </div>
+      </div>
     </div>
-    <div class="luchador" onclick="verDetalles('rebecca')">
-      <img src="images/rebecca.jpg" alt="Rebecca">
-      <p>Rebecca Fox</p>
-    </div>
-  </div>
-
-  <div id="detalles" class="detalles">
-    <h2 id="nombre"></h2>
-    <p id="logros"></p>
-    <button onclick="cerrarDetalles()">Cerrar</button>
-  </div>
-
-  <script src="script.js"></script>
+  </section>
 </body>
 </html>
