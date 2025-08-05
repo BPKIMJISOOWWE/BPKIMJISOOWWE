@@ -173,7 +173,7 @@
       <li class="roster-card luchador"><img src="images/corajadetag.jpg" alt="Cora Jade"><div class="roster-overlay"><h3>Cora Jade</h3></div></li>
       <li class="roster-card luchador"><img src="images/dakotakai.jpg" alt="Dakota Kai"><div class="roster-overlay"><h3>Dakota Kai</h3></div></li>
       <li class="roster-card luchador"><img src="images/elektralopez.jpg" alt="Elektra Lopez"><div class="roster-overlay"><h3>Elektra Lopez</h3></div></li>
-      <li class="roster-card luchador"><img src="images/kiana james.jpg" alt="Kiana James"><div class="roster-overlay"><h3>Kiana James</h3></div></li>
+      <li class="roster-card luchador"><img src="images/kiana.jpg" alt="Kiana James"><div class="roster-overlay"><h3>Kiana James</h3></div></li>
       <li class="roster-card luchador"><img src="images/Liv Morgan.png" alt="Liv Morgan"><div class="roster-overlay"><h3>Liv Morgan</h3></div></li>
       <li class="roster-card luchador"><img src="images/lyravalkyria.jpg" alt="Lyra Valkyria"><div class="roster-overlay"><h3>Lyra Valkyria</h3></div></li>
       <li class="roster-card luchador"><img src="images/mercedesmone.jpg" alt="Mercedes Mone"><div class="roster-overlay"><h3>Mercedes Mone</h3></div></li>
@@ -188,7 +188,7 @@
       <li class="roster-card luchador"><img src="images/zelinavega.jpg" alt="Zelina Vega"><div class="roster-overlay"><h3>Zelina Vega</h3></div></li>
       <li class="roster-card luchador"><img src="images/zoeystark.jpg" alt="Zoey Stark"><div class="roster-overlay"><h3>Zoey Stark</h3></div></li>
     </ul>
-
+    
     <ul id="smackdown" class="roster-grid roster-list">
       <li class="roster-card luchador"><img src="images/alba.jpg" alt="Alba Fyre"><div class="roster-overlay"><h3>Alba Fyre</h3></div></li>
       <li class="roster-card luchador"><img src="images/asuka.jpg" alt="Asuka"><div class="roster-overlay"><h3>Asuka</h3></div></li>
@@ -241,16 +241,21 @@
   <script>
     const selector = document.getElementById("rosterSelector");
     const lists = document.querySelectorAll(".roster-list");
-
-    selector.addEventListener("change", function () {
+    
+    // Función para manejar la visibilidad del roster y el modal
+    const handleRosterChange = () => {
       lists.forEach(list => list.classList.remove("visible"));
-      document.getElementById(this.value).classList.add("visible");
+      const selectedRoster = document.getElementById(selector.value);
+      if (selectedRoster) {
+        selectedRoster.classList.add("visible");
+      }
+    
       const cards = document.querySelectorAll('.roster-card');
       const modal = document.getElementById('infoModal');
       const modalName = document.getElementById('modalName');
       const modalDescription = document.getElementById('modalDescription');
       const closeModal = document.querySelector('.close-btn');
-
+    
       // Información de cada luchadora
       const wrestlerInfo = {
         "Alba Fyre": "1x NXT UK Women's Championship",
@@ -311,30 +316,35 @@
         "Tatum Paxley": "1x NXT Women's Tag Team Champion",
         "Tiffany Stratton": "1x NXT Women's Champion",
         "Zoey Stark": "1x NXT Women's Champion",
-        // etc.
       };
-
+    
       cards.forEach(card => {
         card.addEventListener('click', () => {
           const name = card.querySelector('h3').innerText;
           modalName.textContent = name;
           modalDescription.innerHTML = (wrestlerInfo[name] || "No accomplishments yet")
-            .replace(/(\d+x )/g, '<br>$1') // Inserta <br> antes de cada número seguido de "x"
-            .replace(/^<br>/, ''); // Elimina un <br> si aparece al principio
+            .replace(/(\d+x )/g, '<br>$1')
+            .replace(/^<br>/, '');
           modal.style.display = "block";
         });
       });
-
+    
       closeModal.onclick = () => {
         modal.style.display = "none";
       };
-
+    
       window.onclick = event => {
         if (event.target == modal) {
           modal.style.display = "none";
         }
       };
-    });
+    };
+    
+    // Llama a la función al cargar la página para mostrar el roster "Current"
+    handleRosterChange();
+    
+    // Agrega el event listener para el cambio en el select
+    selector.addEventListener("change", handleRosterChange);
   </script>
 </body>
 </html>
