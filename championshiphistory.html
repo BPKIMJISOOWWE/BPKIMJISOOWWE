@@ -8,12 +8,10 @@
 </head>
 <body>
 
-  <!-- Banner superior -->
   <header class="top-banner">
     <img src="images/banner.jpg" alt="WWE Banner">
   </header>
 
-  <!-- Menú de navegación -->
   <nav class="main-menu">
     <ul>
       <li><a href="index.html">Home</a></li>
@@ -22,13 +20,11 @@
     </ul>
   </nav>
 
-  <!-- Sección de historia de campeonatos -->
   <section class="championship-history">
     <h2><span class="wwe">BPKIMJISOOWWE:</span> Championship History</h2>
     <p>¡Aquí podrás ver los campeonatos más prestigiosos de nuestro universo de luchadoras!</p>
   </section>
 
-  <!-- Grid de títulos -->
   <section class="title-grid">
     <div class="title-card" data-title="WWE Women's World Championship">
       <img src="images/womensworld.jpg" alt="WWE Women's World Championship">
@@ -50,7 +46,7 @@
       <img src="images/us.jpg" alt="WWE Women's United States Championship">
       <h3>Women's United States Championship</h3>
     </div>
-    <div class="title-card" data-title="NXT Women's championship">
+    <div class="title-card" data-title="NXT Women's Championship">
       <img src="images/nxtchamp.jpg" alt="NXT Women's Championship">
       <h3>NXT Women's Championship</h3>
     </div>
@@ -84,30 +80,28 @@
     </div>
   </section>
 
-  <!-- Modal -->
   <div id="modal" class="modal">
     <div class="modal-content">
       <span class="close-btn" id="closeModal">&times;</span>
       <h2 id="modalName"></h2>
-      <p id="modalDescription"></p>
+      <ul id="modalList"></ul>
     </div>
   </div>
 
-  <!-- Script -->
   <script>
     const modal = document.getElementById("modal");
     const modalName = document.getElementById("modalName");
-    const modalDescription = document.getElementById("modalDescription");
+    const modalList = document.getElementById("modalList");
     const closeModal = document.getElementById("closeModal");
 
     const titleInfo = {
-      "WWE Women's Championship": "Charlotte Flair (176 Days)<br> Bayley (161 Days)<br> Nia Jax (82 Days)<br> Iyo Sky (278 Days)<br> Kairi Sane (Current Champion)",
+      "WWE Women's Championship": "Charlotte Flair (176 Days)<br>Bayley (161 Days)<br>Nia Jax (82 Days)<br>Iyo Sky (278 Days)<br>Kairi Sane (Current Champion)",
       "WWE Women's Tag Team Championship": "Las mejores en trabajo en equipo.",
       "SmackDown Women's Championship": "Campeona de SmackDown.",
       "Raw Women's Championship": "Campeona de RAW.",
       "WWE Women's United States Championship": "Campeona de Estados Unidos.",
       "WWE Women's Intercontinental Championship": "Campeona Intercontinental.",
-      "WWE Women's World Championship": "Michin (1 Day)<br> Natalya (176 Days)<br> Becky Lynch (450 Days)<br> Liv Morgan (Current Champion)",
+      "WWE Women's World Championship": "Michin (1 Day)<br>Natalya (176 Days)<br>Becky Lynch (450 Days)<br>Liv Morgan (Current Champion)",
       "NXT Women's Championship": "Campeona de NXT.",
       "NXT UK Women's Champion": "Campeona de NXT UK.",
       "NXT Women's North American Championship": "Campeona NA de NXT.",
@@ -122,9 +116,19 @@
       card.addEventListener('click', () => {
         const titleName = card.getAttribute('data-title');
         modalName.textContent = titleName;
-        modalDescription.textContent = (titleInfo[titleName] || "Información no disponible.")
-        .replace(/(\d+x )/g, '<br>$1')  // Inserta <br> antes de cada número seguido de "x"
-        .replace(/^<br>/, '');
+        
+        // Limpiar la lista antes de agregar nuevos elementos
+        modalList.innerHTML = '';
+        
+        const info = titleInfo[titleName] || "Información no disponible.";
+        const champions = info.split('<br>');
+        
+        champions.forEach(champion => {
+          const li = document.createElement('li');
+          li.textContent = champion.trim();
+          modalList.appendChild(li);
+        });
+        
         modal.style.display = "block";
       });
     });
@@ -142,5 +146,3 @@
   </script>
 </body>
 </html>
-
-
