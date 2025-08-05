@@ -184,7 +184,6 @@ body {
 }
 
 /* Fondo blanco para la sección Home */
-
 .home-section .wwe {
   color: #999;
 }
@@ -241,9 +240,6 @@ body {
   margin: 20px 0;
   text-align: center;
 }
-
-
-
 
 /* Fondo blanco para la sección Championship History */
 .championship-history {
@@ -378,8 +374,3 @@ body {
     font-size: 1em;
   }
 }
-
-
-
-
-
