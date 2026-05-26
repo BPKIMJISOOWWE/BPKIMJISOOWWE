@@ -1,27 +1,19 @@
-/* ========================= */
-/* GENERAL */
-/* ========================= */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     background-color: #000000;
-    color: #fff;
+    color: #fff; /* 🔥 CAMBIO CLAVE: antes #111 no se veía */
 }
 
-/* ========================= */
-/* BANNER (FIX MOBILE 🔥) */
-/* ========================= */
+/* Banner */
 .top-banner img {
     width: 100%;
-    height: auto; /* 🔥 evita que se corte */
     max-height: 300px;
     object-fit: cover;
     display: block;
 }
 
-/* ========================= */
-/* MENÚ */
-/* ========================= */
+/* Menú */
 .main-menu {
     background-color: #111;
     text-align: center;
@@ -49,9 +41,7 @@ body {
     color: rgb(255, 0, 157);
 }
 
-/* ========================= */
-/* CHAMPIONS */
-/* ========================= */
+/* Champions */
 .champions {
     padding: 20px;
     background: #ffffff;
@@ -97,7 +87,7 @@ body {
     object-fit: cover;
 }
 
-/* OVERLAY */
+/* OVERLAY (FIX IMPORTANTE) */
 .champion-overlay {
     position: absolute;
     bottom: 0;
@@ -107,6 +97,7 @@ body {
     color: white;
 }
 
+/* TEXTO */
 .champion-overlay h3 {
     margin: 0;
     font-size: 2em;
@@ -121,6 +112,7 @@ body {
 /* ========================= */
 /* ROSTER */
 /* ========================= */
+
 .roster-section {
     padding: 20px;
     background: #ffffff;
@@ -187,6 +179,7 @@ body {
 /* ========================= */
 /* MODAL */
 /* ========================= */
+
 .modal {
     display: none;
     position: fixed;
@@ -204,7 +197,6 @@ body {
     border-radius: 10px;
     text-align: center;
     color: #111;
-    position: relative;
 }
 
 .close-btn {
@@ -219,7 +211,6 @@ body {
 /* RESPONSIVE */
 /* ========================= */
 
-/* Tablet */
 @media (max-width: 1024px) {
     .champion-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -228,22 +219,9 @@ body {
     .roster-grid {
         grid-template-columns: repeat(2, 1fr);
     }
-
-    .champion-card {
-        width: 90%;
-        height: auto;
-    }
 }
 
-/* Celular */
 @media (max-width: 600px) {
-
-    /* 🔥 FIX LOGO */
-    .top-banner img {
-        max-height: none;
-        object-fit: contain;
-    }
-
     .champion-grid,
     .roster-grid {
         grid-template-columns: 1fr;
@@ -252,15 +230,5 @@ body {
     .main-menu ul {
         flex-direction: column;
         gap: 10px;
-    }
-
-    .champion-card {
-        width: 95%;
-        height: auto;
-    }
-
-    .roster-card {
-        width: 90%;
-        height: auto;
     }
 }
