@@ -1,8 +1,11 @@
+/* ==========================================
+   ESTILOS GENERALES Y PALETA ROSA / BLANCO / NEGRO
+   ========================================== */
 body { 
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     background-color: #000000;
-    color: #111;
+    color: #ffffff;
 }
 
 .top-banner img {
@@ -10,13 +13,18 @@ body {
     max-height: 300px;
     object-fit: cover;
     display: block;
+    border-bottom: 3px solid #ff009d;
 }
 
+/* ==========================================
+   MENÚ DE NAVEGACIÓN
+   ========================================== */
 .main-menu {
-    background-color: #111;
+    background-color: #0d0d0d;
     text-align: center;
-    padding: 10px 0;
+    padding: 15px 0;
     margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 0, 157, 0.3);
 }
 
 .main-menu ul {
@@ -28,29 +36,34 @@ body {
 }
 
 .main-menu a {
-    color: white;
+    color: #ffffff;
     text-decoration: none;
     font-weight: bold;
     font-size: 18px;
+    transition: color 0.3s ease;
 }
 
 .main-menu a:hover {
-    color: rgb(255, 0, 157);
+    color: #ff009d;
+    text-shadow: 0 0 10px rgba(255, 0, 157, 0.5);
 }
 
+/* ==========================================
+   SECCIÓN DE CAMPEONES (CHAMPIONS)
+   ========================================== */
 .champions {
-    padding: 20px;
-    background: #ffffff;
-    color: #111;
+    padding: 30px 20px;
+    background: #0a0a0a;
+    color: #ffffff;
 }
 
 .champions h2 {
-    font-size: 24px;
+    font-size: 26px;
     margin-bottom: 20px;
 }
 
 .champions .wwe {
-    color: #999;
+    color: #ff009d;
 }
 
 .champion-grid {
@@ -66,14 +79,16 @@ body {
     width: 400px;
     height: 400px;
     overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .champion-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    transform: scale(1.03);
+    box-shadow: 0 8px 25px rgba(255, 0, 157, 0.3);
+    border-color: #ff009d;
 }
 
 .champion-card img {
@@ -89,41 +104,44 @@ body {
     left: 0;
     width: 100%;
     padding: 20px;
-    background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2));
+    background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.1));
     color: rgb(255, 255, 255);
     z-index: 2;
 }
 
 .champion-overlay h3 {
     margin: 0;
-    font-size: 2em;
+    font-size: 1.8em;
 }
 
 .champion-overlay p {
     margin: 5px 0 0;
-    font-size: 1.2em;
-    color: #ccc;
+    font-size: 1.1em;
+    color: #ff009d;
 }
 
-/* Sección de Rosters */
+/* ==========================================
+   SECCIÓN DE ROSTERS
+   ========================================== */
 .roster-section {
-    padding: 20px;
-    background: #ffffff;
-    color: #111;
+    padding: 30px 20px;
+    background: #0a0a0a;
+    color: #ffffff;
     text-align: center;
 }
 
 #rosterSelector {
-    padding: 10px;
-    background-color: #fff;
-    border: 2px solid #333;
-    border-radius: 5px;
+    padding: 10px 15px;
+    background-color: #141414;
+    border: 2px solid #ff009d;
+    border-radius: 8px;
     font-size: 16px;
-    color: #333;
+    color: #ffffff;
     margin-bottom: 20px;
+    outline: none;
+    cursor: pointer;
 }
 
-/* Restaurar estilo original de los rosters con mejoras */
 .roster-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -137,15 +155,17 @@ body {
     width: 220px;
     height: 250px;
     overflow: hidden;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    background-color: #f4f4f4;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    background-color: #141414;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .roster-card:hover {
     transform: scale(1.05);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    box-shadow: 0 6px 20px rgba(255, 0, 157, 0.3);
+    border-color: #ff009d;
 }
 
 .roster-card img {
@@ -160,22 +180,20 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.2));
+    background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.1));
     color: white;
-    padding: 10px;
+    padding: 12px;
 }
 
 .roster-overlay h3 {
     margin: 0;
-    font-size: 1.5em;
+    font-size: 1.3em;
 }
 
-/* Roster lists ocultas por defecto */
 .roster-list {
     display: none;
 }
 
-/* LA REGLA CORREGIDA: se añadió !important */
 .roster-list.visible {
     display: grid !important;
     grid-template-columns: repeat(4, 1fr);
@@ -183,33 +201,37 @@ body {
     margin-top: 20px;
 }
 
-/* Fondo blanco para la sección Home */
-.home-section .wwe {
-    color: #999;
+/* ==========================================
+   SECCIÓN HOME
+   ========================================== */
+.home-section {
+    background-color: #000000;
+    padding: 30px 20px;
+    color: #ffffff;
 }
 
-.home-section {
-    background-color: #ffffff;
-    padding: 20px;
-    color: #111;
+.home-section .wwe {
+    color: #ff009d;
 }
 
 .home-intro {
-    background-image: url('tu-imagen.jpg');
     background-size: cover;
     background-position: center;
-    padding: 80px 20px;
-    color: rgb(0, 0, 0);
+    padding: 60px 20px;
+    color: #ffffff;
     position: relative;
-    max-width: 800px;
+    max-width: 850px;
     margin: auto;
     text-align: center;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 0, 157, 0.3);
+    background: linear-gradient(145deg, #0d0d0d, #141414);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
 }
 
 .home-intro .overlay {
-    background-color: rgb(255, 255, 255);
-    padding: 1px;
-    border-radius: 1px;
+    background-color: transparent;
+    padding: 0;
 }
 
 .home-intro .content {
@@ -219,94 +241,81 @@ body {
 }
 
 .home-intro h1 {
-    font-size: 3em;
+    font-size: 2.8em;
     margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.home-intro h1 span {
+    color: #ff009d;
 }
 
 .home-intro p {
-    font-size: 1.2em;
+    font-size: 1.15em;
     margin-bottom: 20px;
     line-height: 1.6;
+    color: #cccccc;
 }
 
 .btn-yt {
     display: inline-block;
-    background-color: rgb(255, 0, 157);
+    background-color: #ff009d;
     color: white;
-    padding: 12px 25px;
-    border-radius: 8px;
+    padding: 14px 28px;
+    border-radius: 50px;
     text-decoration: none;
     font-weight: bold;
     margin: 20px 0;
     text-align: center;
+    box-shadow: 0 4px 15px rgba(255, 0, 157, 0.4);
+    transition: all 0.3s ease;
 }
 
-/* Fondo blanco para la sección Championship History */
+.btn-yt:hover {
+    background-color: #ff2eb5;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 0, 157, 0.6);
+}
+
+/* ==========================================
+   CHAMPIONSHIP HISTORY
+   ========================================== */
 .championship-history {
-    background-color: #ffffff;
-    padding: 20px;
-    color: #111;
+    background-color: #0a0a0a;
+    padding: 30px 20px;
+    color: #ffffff;
 }
 
 .championship-history .wwe {
-    color: #999;
-}
-
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.7);
-}
-
-.modal-content {
-    background-color: #fff;
-    margin: 10% auto;
-    padding: 20px;
-    border-radius: 12px;
-    width: 80%;
-    max-width: 400px;
-    text-align: center;
-    position: relative;
-}
-
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 24px;
-    cursor: pointer;
+    color: #ff009d;
 }
 
 .title-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    padding: 20px;
-    background-color: #ffffff;
+    padding: 20px 0;
+    background-color: transparent;
     justify-items: center;
 }
 
 .title-card {
     width: 300px;
-    height: 200px;
-    border-radius: 8px;
+    height: 210px;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     cursor: pointer;
-    background-color: #f4f4f4;
+    background-color: #141414;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     text-align: center;
 }
 
 .title-card:hover {
     transform: scale(1.05);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    box-shadow: 0 6px 20px rgba(255, 0, 157, 0.3);
+    border-color: #ff009d;
 }
 
 .title-card img {
@@ -319,10 +328,69 @@ body {
 .title-card h3 {
     margin: 10px;
     font-size: 1.1em;
-    color: #111;
+    color: #ffffff;
 }
 
-/* --- RESPONSIVE DESIGN --- */
+/* ==========================================
+   MODAL
+   ========================================== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: #141414;
+    color: #ffffff;
+    margin: 12% auto;
+    padding: 25px;
+    border-radius: 12px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+    border: 1px solid #ff009d;
+    box-shadow: 0 0 25px rgba(255, 0, 157, 0.3);
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #ff009d;
+    transition: color 0.2s ease;
+}
+
+.close-btn:hover {
+    color: #ffffff;
+}
+
+/* ==========================================
+   LOGO CENTRADO
+   ========================================== */
+.logo-home {
+    display: block;
+    margin: 20px auto;
+    max-width: 180px;
+    height: auto;
+    border-radius: 50%;
+    border: 3px solid #ff009d;
+    box-shadow: 0 0 20px rgba(255, 0, 157, 0.4);
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
 @media (max-width: 1024px) {
     .champion-grid,
     .roster-list.visible,
@@ -353,11 +421,11 @@ body {
 
     .main-menu ul {
         flex-direction: column;
-        gap: 10px;
+        gap: 12px;
     }
 
     .home-intro {
-        padding: 40px 10px;
+        padding: 40px 15px;
     }
 
     .home-intro h1 {
@@ -371,21 +439,10 @@ body {
     .btn-yt {
         width: 100%;
         font-size: 1em;
+        padding: 12px 20px;
     }
-}
 
-/* ========================= */
-/* NUEVO: LOGO CENTRADO */
-/* ========================= */
-
-.logo-home {
-    display: block;
-    margin: 20px auto;
-}
-
-@media (max-width: 600px) {
     .logo-home {
-        width: 150px;
-        height: auto;
+        width: 140px;
     }
 }
